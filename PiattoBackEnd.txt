@@ -1,0 +1,41 @@
+Piatto Food App - BackEnd Project Proposal
+
+Piatto is a YELP style food search app that I've put together in JSCRIPT320B using React.
+Piatto leverages the YELP API for query search, and the OpenStreetMap API for mapping of restuarant locations. I would like to build up the backend for this App, which will give it more functionality.
+
+AUTHENTICATION AND AUTHORIZATION
+- Login/Registration for Authentication
+	-JWT will also serve the Authorization role so that users won’t see other user’s favorite list
+- OAuth login (if time permitting)
+
+2  SETS OF CRUD ROUTES (NOT COUNTING AUTHENTICATION)
+- Save favorite restaurant (required AuthZ)- After a Yelp query search submit, the app returns a list of top 10 places, and each card has a fav heart icon that can be pressed. This will add the location to a favorites list. From the favorite list the user will be able to remove it if needed. Could also be removed from list by pressing the fav heat icon on the restaurant card itself.
+
+- Create Event (required AuthZ)- User can create an event for the selected restaurant  
+
+
+INDEXES FOR PERFORMANCE AND UNIQUENESS WHEN REASONABLE
+- Indexing will occur	on fav restaurant list for performance. Don’t think I want uniqueness since some restaurants within a region can share names.
+
+AT LEAST ONE OF TEXT SEARCH, AGGREGATIONS, AND LOOKUPS
+- Text search within the restaurant page that would bring up the most relevant places on the list.
+- Might do some search on events (time permitting)
+
+EXTERNAL DATA
+- I will be using the YELP API initially, but once the user adds a restaurant to their favorite list, it will be stored within the local db. 
+
+DataModel:
+- Name
+- Address
+- Rating
+- Contact
+
+EventModel:
+- DataModelReference
+- EventDate
+
+Timeframe 
+Week 7 - Implement AuthN/AuthZ 
+Week 8 - Implement Data and Event routes that will create and store favorites 
+Week 9 - Finish any remaining implementations, and implement test routes 
+Week 10 - Present
