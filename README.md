@@ -1,3 +1,8 @@
+npm run coverage	- Test coverage
+npm test 			- Run tests
+npm start			- Start Front-End
+node index.js		- Start Backend		
+
 Proof of Concept
 
 Description - I wanted to get exposure to Mobile Front-Backend integration, and so I decided to pursue a simple React Native Expo App that will have the following Page-Functionalities:
