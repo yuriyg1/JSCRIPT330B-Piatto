@@ -36,6 +36,14 @@ const NavigationBar = ({ onIconSelect }) => {
           style={styles.icon}
         />
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => handleIconPress('groups')}>
+        <MaterialIcons
+          name="groups"
+          size={40}
+          color={selectedIcon === 'groups' ? 'blue' : 'black'}
+          style={styles.icon}
+        />
+      </TouchableOpacity>
       <TouchableOpacity onPress={() => handleIconPress('user')}>
         <EvilIcons
           name="user"

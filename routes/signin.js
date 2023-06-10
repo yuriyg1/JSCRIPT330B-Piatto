@@ -12,8 +12,13 @@ router.post('/', async (req, res) => {
   const { email, password } = req.body;
 
   try {
+    if (!email || !password) {
+      return res.status(400).json({ error: 'User not found' });
+    }
+
     // Find the user by email
     const user = await userDAO.getUser(email);
+          // console.log('user: ', user)
 
     // If user not found, return error
     if (!user) {
@@ -34,17 +39,6 @@ router.post('/', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });
   }
-});
-
-router.get('/users', async (req, res) => {
-    try {
-      // Retrieve all users
-      const users = await User.find();
-      res.status(200).json({ users });
-    } catch (error) {
-      //console.error(error);
-      res.status(500).json({ error: 'Internal server error' });
-    }
 });
 
 module.exports = router;

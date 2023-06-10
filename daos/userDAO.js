@@ -53,3 +53,14 @@ module.exports.getUserById = async (userId) => {
       return null;
     }
   };
+
+
+module.exports.getAllUsers = async () => {
+    try {
+        const allUsers = await User.find();
+        return allUsers;
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
+}

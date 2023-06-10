@@ -4,6 +4,7 @@ import SignInPage from './Pages/SignInPage';
 import CreateAccountPage from './Pages/CreateAccountPage';
 import NavigationBar from './Pages/NavigationBar';
 import UserPage from './Pages/UserPage';
+import GroupsPage from './Pages/GroupsPage';
 import StarPage from './Pages/StarPage';
 import FavPage from './Pages/FavPage';
 import SearchPage from './Pages/SearchPage';
@@ -43,6 +44,9 @@ const App = () => {
       case 'user':
         setContent(<UserPage token={token} onSignOut={handleSignOut} />);
         break;
+      case 'groups':
+        setContent(<GroupsPage token={token} />);
+        break;
       case 'star':
         setContent(<StarPage token={token} />);
         break;
@@ -71,8 +75,9 @@ const App = () => {
         {isLoggedIn && token && content}
       </View>
   
-      {/* Absolute position the navigation bar at the bottom */}
-      {isLoggedIn && token && <NavigationBar onIconSelect={handleIconSelect} style={styles.navigationBar} />}
+      {isLoggedIn && token && (
+      <NavigationBar onIconSelect={handleIconSelect} style={styles.navigationBar} />
+    )}
     </View>
   );
 
