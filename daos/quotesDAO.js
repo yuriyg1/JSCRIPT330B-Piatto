@@ -70,7 +70,7 @@ module.exports.removeQuote = async (userId, quoteId) => {
     const quote = await Quote.findOneAndDelete({ userId: userId, _id: quoteId });
     return quote;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return null;
   }
 };

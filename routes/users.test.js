@@ -68,7 +68,6 @@ describe('User Routes', () => {
       });
       expect(res.statusCode).toEqual(200);
       user1JWT = JSON.parse(res.text).jwToken;
-      console.log('res', user1JWT)
       const decodedToken = jwt.decode(user1JWT);
       user1_id = decodedToken.userId
       // console.log('decodedToken1', decodedToken,'user1_id', user1_id)
@@ -84,7 +83,6 @@ describe('User Routes', () => {
       });
       expect(res.statusCode).toEqual(200);
       user2JWT = JSON.parse(res.text).jwToken;
-      console.log('res', user2JWT)
       const decodedToken = jwt.decode(user1JWT);
       user2_id = decodedToken.userId
       // console.log('decodedToken2', decodedToken,'user2_id', user2_id)

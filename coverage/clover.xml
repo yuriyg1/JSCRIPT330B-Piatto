@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686980885258" clover="3.2.0">
-  <project timestamp="1686980885258" name="All files">
+<coverage generated="1686981984213" clover="3.2.0">
+  <project timestamp="1686981984213" name="All files">
     <metrics statements="276" coveredstatements="225" conditionals="50" coveredconditionals="37" methods="26" coveredmethods="25" elements="352" coveredelements="287" complexity="0" loc="276" ncloc="276" packages="4" files="11" classes="11"/>
-    <package name="PiattoV2">
+    <package name="JSCRIPT330B-Piatto">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="server.js" path="/Users/mac/Desktop/fc/PiattoV2/server.js">
+      <file name="server.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/server.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
@@ -14,9 +14,9 @@
         <line num="8" count="5" type="stmt"/>
       </file>
     </package>
-    <package name="PiattoV2.daos">
+    <package name="JSCRIPT330B-Piatto.daos">
       <metrics statements="90" coveredstatements="66" conditionals="8" coveredconditionals="5" methods="11" coveredmethods="10"/>
-      <file name="quotesDAO.js" path="/Users/mac/Desktop/fc/PiattoV2/daos/quotesDAO.js">
+      <file name="quotesDAO.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/daos/quotesDAO.js">
         <metrics statements="35" coveredstatements="24" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="3"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
@@ -54,7 +54,7 @@
         <line num="83" count="0" type="stmt"/>
         <line num="84" count="0" type="stmt"/>
       </file>
-      <file name="userDAO.js" path="/Users/mac/Desktop/fc/PiattoV2/daos/userDAO.js">
+      <file name="userDAO.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/daos/userDAO.js">
         <metrics statements="55" coveredstatements="42" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="7"/>
         <line num="1" count="5" type="stmt"/>
         <line num="3" count="5" type="stmt"/>
@@ -113,25 +113,25 @@
         <line num="94" count="0" type="stmt"/>
       </file>
     </package>
-    <package name="PiattoV2.models">
+    <package name="JSCRIPT330B-Piatto.models">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="quote.js" path="/Users/mac/Desktop/fc/PiattoV2/models/quote.js">
+      <file name="quote.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/models/quote.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="5" type="stmt"/>
         <line num="3" count="5" type="stmt"/>
         <line num="13" count="5" type="stmt"/>
         <line num="15" count="5" type="stmt"/>
       </file>
-      <file name="user.js" path="/Users/mac/Desktop/fc/PiattoV2/models/user.js">
+      <file name="user.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/models/user.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="5" type="stmt"/>
         <line num="3" count="5" type="stmt"/>
         <line num="12" count="5" type="stmt"/>
       </file>
     </package>
-    <package name="PiattoV2.routes">
+    <package name="JSCRIPT330B-Piatto.routes">
       <metrics statements="173" coveredstatements="146" conditionals="42" coveredconditionals="32" methods="15" coveredmethods="15"/>
-      <file name="middleware.js" path="/Users/mac/Desktop/fc/PiattoV2/routes/middleware.js">
+      <file name="middleware.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/routes/middleware.js">
         <metrics statements="15" coveredstatements="12" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
@@ -149,7 +149,7 @@
         <line num="25" count="0" type="stmt"/>
         <line num="29" count="5" type="stmt"/>
       </file>
-      <file name="quotes.js" path="/Users/mac/Desktop/fc/PiattoV2/routes/quotes.js">
+      <file name="quotes.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/routes/quotes.js">
         <metrics statements="35" coveredstatements="27" conditionals="8" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
@@ -187,7 +187,7 @@
         <line num="59" count="0" type="stmt"/>
         <line num="63" count="5" type="stmt"/>
       </file>
-      <file name="search.js" path="/Users/mac/Desktop/fc/PiattoV2/routes/search.js">
+      <file name="search.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/routes/search.js">
         <metrics statements="15" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
@@ -205,7 +205,7 @@
         <line num="22" count="1" type="stmt"/>
         <line num="26" count="5" type="stmt"/>
       </file>
-      <file name="signin.js" path="/Users/mac/Desktop/fc/PiattoV2/routes/signin.js">
+      <file name="signin.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/routes/signin.js">
         <metrics statements="25" coveredstatements="23" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
@@ -233,7 +233,7 @@
         <line num="39" count="0" type="stmt"/>
         <line num="43" count="5" type="stmt"/>
       </file>
-      <file name="signup.js" path="/Users/mac/Desktop/fc/PiattoV2/routes/signup.js">
+      <file name="signup.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/routes/signup.js">
         <metrics statements="27" coveredstatements="24" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
@@ -263,7 +263,7 @@
         <line num="47" count="0" type="stmt"/>
         <line num="51" count="5" type="stmt"/>
       </file>
-      <file name="users.js" path="/Users/mac/Desktop/fc/PiattoV2/routes/users.js">
+      <file name="users.js" path="/Users/mac/Desktop/App/JSCRIPT330B-Piatto/routes/users.js">
         <metrics statements="56" coveredstatements="46" conditionals="10" coveredconditionals="8" methods="8" coveredmethods="8"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
