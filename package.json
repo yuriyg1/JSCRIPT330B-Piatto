@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "tdd": "jest --watch --runInBand",
-    "test": "jest --runInBand --verbose",
+    "test": "jest --runInBand --verbose search.test.js",
     "coverage": "jest --runInBand --coverage"
   },
   "jest": {

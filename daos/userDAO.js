@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
 const User = require('../models/user');
-const bcrypt = require('bcrypt');
 
 module.exports = {};
 
@@ -26,41 +24,73 @@ module.exports.getUser = async (email) => {
       }
 }
 
-//should update the user's password field
-module.exports.updateUserPassword = async (userId, password) => {
-    try {
-      const user = await User.findById(userId);
-      if (!user) {
-        return null;
-      }
-      const hashedPassword = await bcrypt.hash(password, 10);
-      user.password = hashedPassword;
-      await user.save();
-      return user;
-    } catch (error) {
-      console.log(error);
-      return null;
-    }
-  };
-
 //should pull user by id
 module.exports.getUserById = async (userId) => {
     try {
       const usr = await User.findById(userId);
       return usr;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       return null;
     }
   };
 
-
 module.exports.getAllUsers = async () => {
-    try {
-        const allUsers = await User.find();
-        return allUsers;
-      } catch (error) {
-        console.error(error);
-        return null;
-      }
-}
+  try {
+      const allUsers = await User.find();
+      return allUsers;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+
+module.exports.followUser = async (userId, followingId) => {
+  try {
+    const user = await User.findById(userId);
+    if (user.followingId.includes(followingId)) {
+      return null
+    }
+    user.followingId.push(followingId);
+    await user.save();
+    return user
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
+module.exports.unfollowUser = async (userId, followingId) => {
+  try {
+    const user = await User.findById(userId);
+    if (user.followingId.includes(followingId)) {
+      user.followingId.pull(followingId);
+      await user.save();
+
+      return user;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
+
+module.exports.followingUser = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    const followingUsers = [];
+
+    for (const followingUserId of user.followingId) {
+      const followingUser = await User.findById(followingUserId);
+      followingUsers.push(followingUser);
+    }
+
+    return followingUsers;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};

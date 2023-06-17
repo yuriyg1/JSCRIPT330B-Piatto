@@ -13,7 +13,6 @@ module.exports.saveQuote = async (userId, quoteObj) => {
       }
       const doubleQuote = await Quote.findOne({ quoteId: quoteObj._id });
       if (doubleQuote) {
-            console.log('DoubleQuote')
         return null;
       }
       
@@ -30,32 +29,31 @@ module.exports.saveQuote = async (userId, quoteObj) => {
       await newQuote.save();
       return newQuote;
     } catch (error) {
-      //console.error(error);
-      console.log('error')
-      return null;
-    }
-  }
-
-
-//should create a quote for the given user
-module.exports.createQuote = async (userId, quoteObj) => {
-    try {
-      const user = await User.findById(userId);
-      if (!user) {
+        console.error(error);
         return null;
-      }
-      const newQuote = new Quote({
-        author: quoteObj.author,
-        content: quoteObj.content,
-        userId: user._id
-      });
-      await newQuote.save();
-      return newQuote;
-    } catch (error) {
-      console.error(error);
-      return null;
     }
   }
+
+
+// //should create a quote for the given user
+// module.exports.createQuote = async (userId, quoteObj) => {
+//     try {
+//       const user = await User.findById(userId);
+//       if (!user) {
+//         return null;
+//       }
+//       const newQuote = new Quote({
+//         author: quoteObj.author,
+//         content: quoteObj.content,
+//         userId: user._id
+//       });
+//       await newQuote.save();
+//       return newQuote;
+//     } catch (error) {
+//       console.error(error);
+//       return null;
+//     }
+//   }
 
 module.exports.getAllQuotes = async (userId) => {
   try {

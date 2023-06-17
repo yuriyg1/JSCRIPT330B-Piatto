@@ -4,7 +4,7 @@ const models = [require('./models/quote'), require('./models/user')];
 module.exports = {};
 
 module.exports.connectDB = async () => {
-  await mongoose.connect(process.env.MONGO_URL, {});
+  await mongoose.connect(process.env.MONGO_TEST_URL, {});
   await Promise.all(models.map(m => m.syncIndexes()));
 }
 

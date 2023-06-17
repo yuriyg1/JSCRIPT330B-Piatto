@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
-import NavigationBar from './NavigationBar';
 import axios from 'axios';
 
 const StarPage = (token) => {
   const [quote, setQuote] = useState({});
   const [quoteExists, setquoteExists] = useState(false);
-  console.log('StarToken',token.token)
 
   const getQuote = () => {
     axios
@@ -28,11 +26,10 @@ const StarPage = (token) => {
         },
       })
       .then((res) => {
-        console.log('Quote saved Successfully');
         setquoteExists(false); 
       })
       .catch((e) => {
-        console.error('Save quote failed', e);
+        console.log('Save quote failed', e);
       });
   };
 

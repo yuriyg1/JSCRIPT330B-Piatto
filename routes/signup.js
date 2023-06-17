@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 const userDAO = require('../daos/userDAO');
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
-
-const secretKey = 'abc123';
+require('dotenv').config()
+const secretKey = process.env.JWT_SECRET
 
 // Create account route
 router.post('/', async (req, res) => {
@@ -24,15 +24,17 @@ router.post('/', async (req, res) => {
 
   try {
     const existingUser = await userDAO.getUser(email);
-          // console.log('existingUser',existingUser)
 
     if (existingUser) {
       return res.status(409).json({ message: 'Email taken. Try again.' });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = await userDAO.createUser({ firstName, lastName, email, hashedPassword });
-    const jwToken = jwt.sign({ email: newUser.email }, secretKey);
+const hashedPassword = await bcrypt.hash(password, 10);
+const newUser = await userDAO.createUser({ firstName, lastName, email, hashedPassword });
+const JWT_Guts = { userId: newUser._id, email: newUser.email };
+const exp = { expiresIn: '30d' };
+
+const jwToken = jwt.sign(JWT_Guts, secretKey, exp);
 
     if (newUser) {
       return res.status(200).json({ jwToken });

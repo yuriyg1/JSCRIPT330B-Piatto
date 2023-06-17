@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const userDAO = require('../daos/userDAO');
 const User = require('../models/user');
-
-const secretKey = 'abc123' 
+require('dotenv').config()
+const secretKey = process.env.JWT_SECRET
 
 // Sign-in route
 router.post('/', async (req, res) => {
@@ -18,8 +18,7 @@ router.post('/', async (req, res) => {
 
     // Find the user by email
     const user = await userDAO.getUser(email);
-          // console.log('user: ', user)
-
+    
     // If user not found, return error
     if (!user) {
       return res.status(404).json({ error: 'User not found' });

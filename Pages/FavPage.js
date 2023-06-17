@@ -26,7 +26,6 @@ const FavPage = ( token ) => {
   };
 
   const handleDeleteQuote = (quoteId) => {
-    console.log('Deleting quote with ID:', quoteId);
     axios
       .delete(`http://localhost:3000/quotes/${quoteId}`, {
         headers: {
@@ -34,12 +33,10 @@ const FavPage = ( token ) => {
         },
       })
       .then((res) => {
-        console.log('Quote deleted successfully');
         getSavedQuotes(); // Fetch the updated list of quotes
       })
       .catch((e) => {
         console.error('Failed to delete quote', e);
-        // Handle the error appropriately
       });
   };
   

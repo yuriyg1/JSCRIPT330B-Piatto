@@ -1,7 +1,7 @@
-npm run coverage	- Test coverage
-npm test 			- Run tests
 npm start			- Start Front-End
 node index.js		- Start Backend		
+npm run coverage	- Test coverage
+npm test 			- Run tests
 
 Proof of Concept
 

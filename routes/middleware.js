@@ -1,24 +1,24 @@
+require('dotenv').config()
 const jwt = require('jsonwebtoken');
-
-// const secretKey = process.env.JWT_SECRET;
-const secretKey = 'abc123';
+const secretKey = process.env.JWT_SECRET
 
 async function isAuthorized(req, res, next) {
   const authorizationHeader = req.headers.authorization;
+        // console.log('authorizationHeader',authorizationHeader)
 
   if (!authorizationHeader) {
     return res.status(401).json({ message: 'Authorization header missing or invalid' });
   }
 
   const [bearR, tokenString] = authorizationHeader.split(' ');
+        // console.log('tokenString',tokenString)
 
   if (!tokenString) {
     return res.status(401).json({ message: 'Authorization Token missing or invalid' });
   }
-
   try {
     const decodedToken = jwt.verify(tokenString, secretKey);
-          console.log("decodedToken",decodedToken)
+          // console.log("decodedToken",decodedToken)
     req.JWToken = decodedToken;
     next();
   } catch (error) {
@@ -26,14 +26,4 @@ async function isAuthorized(req, res, next) {
   }
 }
 
-async function isAdmin(req, res, next) {
-  const { roles } = req.JWToken;
-
-  if (!roles || !roles.includes('admin')) {
-    return res.status(403).json({ message: 'Unauthorized: User is not an admin' });
-  }
-
-  next();
-}
-
-module.exports = { isAuthorized, isAdmin };
+module.exports = { isAuthorized };

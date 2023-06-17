@@ -7,7 +7,7 @@ const router = Router();
 
 router.get('/', async (req, res) => {
     try {
-      const searchTerm = req.query.q; // Assuming the search term is provided as a query parameter
+      const searchTerm = req.query.q;
       const results = await Quote.find({ $text: { $search: searchTerm } })
         .sort({ score: { $meta: 'textScore' } })
         .exec();

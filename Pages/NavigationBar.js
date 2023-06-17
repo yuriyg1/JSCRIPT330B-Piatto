@@ -7,7 +7,7 @@ const NavigationBar = ({ onIconSelect }) => {
 
   const handleIconPress = (iconName) => {
     setSelectedIcon(iconName);
-    onIconSelect(iconName); //
+    onIconSelect(iconName);
   };
 
   return (

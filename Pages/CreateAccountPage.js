@@ -33,13 +33,10 @@ const CreateAccountPage = ({ onSignIn, onGoBack }) => {
         email,
         password
       });
-          // console.log('Response: ', response);
       if (response.status === 200) {
         const jwtToken = response.data.jwToken
-              console.log('Create Account successful, jwtToken: ', jwtToken);
         onSignIn(jwtToken);
       } else {
-        console.log('Create Account failed', response.status);
       }
 
     } catch (error) {

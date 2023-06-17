@@ -27,6 +27,7 @@ const App = () => {
     setToken(null);
     setIsSignInPage(true);
     setIsLoggedIn(false);
+    setContent(null);
   };
 
   const handleGoToCreateAccount = () => {
@@ -62,6 +63,12 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    if (isLoggedIn && token) {
+      setContent(<UserPage token={token} onSignOut={handleSignOut} />);
+    }
+  }, [isLoggedIn, token]);
+
   return (
     <View style={styles.container}>
       {isSignInPage && (
@@ -72,15 +79,14 @@ const App = () => {
       )}
 
       <View style={styles.contentContainer}>
-        {isLoggedIn && token && content}
+        {content}
       </View>
   
       {isLoggedIn && token && (
-      <NavigationBar onIconSelect={handleIconSelect} style={styles.navigationBar} />
-    )}
+        <NavigationBar onIconSelect={handleIconSelect} style={styles.navigationBar} />
+      )}
     </View>
   );
-
 };
 
 const styles = StyleSheet.create({
