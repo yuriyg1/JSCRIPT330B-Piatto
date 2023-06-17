@@ -1,3 +1,4 @@
+![Image Alt Text](AppScreens.png)
 - npm install		-- Install dependencies
 - node index.js		-- Start Backend	
 - npm start		-- Start Front-End
