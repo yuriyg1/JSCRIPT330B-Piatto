@@ -20,6 +20,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Start server
+        run: npm start &
+
+      - name: Wait for server to start
+        run: sleep 10
+
       - name: Set up environment variables
         run: |
           echo "JWT_SECRET=$JWT_SECRET" >> $GITHUB_ENV

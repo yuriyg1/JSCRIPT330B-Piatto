@@ -4,7 +4,8 @@ const models = [require('./models/quote'), require('./models/user')];
 module.exports = {};
 
 module.exports.connectDB = async () => {
-  await mongoose.connect(process.env.MONGO_TEST_URL, {});
+  // await mongoose.connect(process.env.MONGO_TEST_URL, {});
+  await mongoose.connect('mongodb://localhost:27017/QuoteBox-Test', {});
   await Promise.all(models.map(m => m.syncIndexes()));
 }
 
