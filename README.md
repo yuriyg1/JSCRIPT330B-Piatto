@@ -1,10 +1,12 @@
-npm run coverage	- Test coverage
-npm test 			- Run tests
-npm start			- Start Front-End
-node index.js		- Start Backend		
+- npm install		-- Install dependencies
+- node index.js		-- Start Backend	
+- npm start		-- Start Front-End
+- npm run coverage	-- Test coverage
+- npm test 		-- Run tests	
+
+** Note: JWT secret key is stored in a dotenv which is gitignored. See Canvas attachement for JWT secret key.
 
 Proof of Concept
-
 Description - I wanted to get exposure to Mobile Front-Backend integration, and so I decided to pursue a simple React Native Expo App that will have the following Page-Functionalities:
  - Sign In: Basic sign in page with Email/Password fields and a button for 'Sign In', and one for 'Create Account'
 		-- Button 'Sign In': Does a POST request to 3000/signin with the provided info, if successful will land on the User page. If record is not found, will send an alert.
@@ -21,9 +23,9 @@ Description - I wanted to get exposure to Mobile Front-Backend integration, and 
 	- Search Page:
 		-- Button 'Search' - If user provided a keyword or first/last name, will GET 3000/search/?q={searchTerm}. If metaScore is high enough, will display a result, else will display 'No Matches Found in Your List'
 
-Completed - 
-	- Routes
-		-- signin.js
+Completed:
+	- Routes:
+		-- signin.js:
 			+ 'POST /' - Incorporated from Week5 HW, uses Bcrypt & JWT.
 		-- signup.js
 			+ 'POST /' - Incorporated from Week5 HW, uses Bcrypt & JWT.
@@ -33,15 +35,15 @@ Completed -
 			+ 'DELETE /:quoteId' requires AuthZ - Removes a specific quotes from a user's list
 		-- search.js
 			+ 'GET /' - Leverages the metaScore search we learned about in class to find a saved quote in a user's saved list given a search term or Author first/last name. Will display 'No Matches Found in Your List' if no hits.
-	- DAO
+   	- DAO
 		-- quotesDAO.js
-			+ userId: required
-			+ quoteId: unique, required
-			+ author: required, indexed
-			+ content: required, indexed (Maybe someone plagiarized idk)
-			+ tags:
-			+ length:
-			+ dateAdded:
+  		+ userId: required
+    		+ quoteId: unique, required
+      		+ author: required, indexed
+		+ content: required, indexed (Maybe someone plagiarized idk)
+  		+ tags:
+    		+ length:
+      		+ dateAdded:
 		-- userDAO.js
 			+ firstName: required
 			+ lastName: required
