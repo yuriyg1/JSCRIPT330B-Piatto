@@ -21,10 +21,10 @@ jobs:
         run: npm install
 
       - name: Set up environment variables
-        env:
-          JWT_SECRET: ${{ secrets.JWT_SECRET }}
-          MONGO_PRODUCTION_URL: ${{ secrets.MONGO_PRODUCTION_URL }}
-          MONGO_TEST_URL: ${{ secrets.MONGO_TEST_URL }}
+        run: |
+          echo "JWT_SECRET=$JWT_SECRET" >> $GITHUB_ENV
+          echo "MONGO_PRODUCTION_URL=$MONGO_PRODUCTION_URL" >> $GITHUB_ENV
+          echo "MONGO_TEST_URL=$MONGO_TEST_URL" >> $GITHUB_ENV
 
       - name: Run Jest tests
         run: npm test
