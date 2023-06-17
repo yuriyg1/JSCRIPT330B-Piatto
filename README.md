@@ -64,3 +64,4 @@ Run it:
 	- npm start - boots the React Native Expo Front End
 	- node index.js - boots the backend stuff
 	- npm install - should install most dependencies, I might have forgot to --save a couple when installing them while composing the App, but console.errors will let you know what you are missing
+![Image Alt Text](JestTestResults.png)
