@@ -34,27 +34,6 @@ module.exports.saveQuote = async (userId, quoteObj) => {
     }
   }
 
-
-// //should create a quote for the given user
-// module.exports.createQuote = async (userId, quoteObj) => {
-//     try {
-//       const user = await User.findById(userId);
-//       if (!user) {
-//         return null;
-//       }
-//       const newQuote = new Quote({
-//         author: quoteObj.author,
-//         content: quoteObj.content,
-//         userId: user._id
-//       });
-//       await newQuote.save();
-//       return newQuote;
-//     } catch (error) {
-//       console.error(error);
-//       return null;
-//     }
-//   }
-
 module.exports.getAllQuotes = async (userId) => {
   try {
     const quotes = await Quote.find({ userId: userId });

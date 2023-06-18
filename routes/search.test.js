@@ -74,31 +74,40 @@ const testQuote = () => {
       });
 
     // Test error state, will also console error
-    it("should return 500 without req.query", async () => {
-        const response = await request(server)
-          .get('/search')
-        expect(response.statusCode).toEqual(500);
-    });
+      it('should return 500 without req.query', async () => {
+          const response = await request(server)
+            .get('/search')
+            .set('Authorization', `Bearer ${user0JWT}`)
+            .send();
+        
+          expect(response.statusCode).toBe(500);
+      });
 
-    // Test search on bad word, should fail to find
-    it("should fail to return quote if passed passed low hit probability term", async () => {
+      // Test search on bad word, should fail to find
+      it("should fail to return quote if passed low hit probability term", async () => {
         const searchTerm = 'ooooo';
         const response = await request(server)
           .get('/search')
+          .set('Authorization', `Bearer ${user0JWT}`)
           .query({ q: searchTerm });
-      
-          expect(response.body).toEqual([]);
-    });
+          
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toEqual([]);
+      });
 
-    // Test search on known word from sentence, should hit quote
-    it("should return 200 and searched quote", async () => {
+      // Test search on known word from sentence, should hit quote
+      it("should return 200 and searched quote", async () => {
         const searchTerm = 'Software';
         const response = await request(server)
           .get('/search')
+          .set('Authorization', `Bearer ${user0JWT}`)
           .query({ q: searchTerm });
-      
-        expect(response.statusCode).toEqual(200);
-    });
+
+          let { author, content } = response.body[0]
+        expect(response.statusCode).toBe(200);
+        expect(author).toBe(quote.author);
+        expect(content).toBe(quote.content);
+      });
 
     });
 });

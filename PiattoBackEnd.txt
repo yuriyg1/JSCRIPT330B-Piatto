@@ -1,3 +1,4 @@
+Original Project Proposal - See README.md for latest Project details
 Piatto Food App - BackEnd Project Proposal
 
 Piatto is a YELP style food search app that I've put together in JSCRIPT320B using React.

@@ -2,17 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { View, TextInput, Button, ScrollView, Text, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-const SearchPage = () => {
+const SearchPage = ({ token }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [noneFound, setNoneFound] = useState(false);
 
   const handleSearch = () => {
     setNoneFound(true)
-    axios
-      .get(`http://localhost:3000/search/?q=${searchTerm}`)
+    searchTerm && axios
+      .get(`http://localhost:3000/search/?q=${searchTerm}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((response) => {
-        setSearchResults(response.data);
+          setSearchResults(response.data);
       })
       .catch((error) => {
         console.error('Search failed', error);
